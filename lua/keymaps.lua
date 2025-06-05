@@ -4,9 +4,6 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Copy text to clipboard
-vim.keymap.set('v', '<C-C>', '"+y', { desc = 'Copy selection to system clipboard' })
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
