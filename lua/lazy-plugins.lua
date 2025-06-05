@@ -20,9 +20,6 @@ require('lazy').setup({
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   --
 
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
-
   require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/which-key',
@@ -43,20 +40,15 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
+  require 'kickstart.plugins.indent_line',
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.lint',
+
   -- require 'kickstart.plugins.autopairs',
+
   -- require 'kickstart.plugins.neo-tree',
+
+  -- require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

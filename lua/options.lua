@@ -7,7 +7,7 @@
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -22,6 +22,17 @@ vim.o.showmode = false
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
+
+-- 4 space tab
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
+-- Use spaces instead of \t on tab pressed
+vim.opt.expandtab = true
+
+-- Copies the indent from the previous line into the new line
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- Enable break indent
 vim.o.breakindent = true
