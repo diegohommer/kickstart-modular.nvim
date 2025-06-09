@@ -36,6 +36,11 @@ return {
         cpp = { 'clang-format' },
         markdown = { 'prettier' },
       },
+      formatters = {
+        clang_format = {
+          prepend_args = { '--style=file', '--fallback-style=Google' },
+        },
+      },
     },
   },
 }
