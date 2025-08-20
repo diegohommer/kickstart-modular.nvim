@@ -34,6 +34,8 @@ return {
         python = { 'isort', 'black' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
         markdown = { 'prettier' },
       },
       formatters = {
