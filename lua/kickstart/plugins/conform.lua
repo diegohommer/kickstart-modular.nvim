@@ -42,6 +42,9 @@ return {
         clang_format = {
           prepend_args = { '--style=file', '--fallback-style=Google' },
         },
+        prettier = {
+          prepend_args = { '--tab-width=4', '--print-width=100' },
+        },
       },
     },
   },
