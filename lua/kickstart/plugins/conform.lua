@@ -35,7 +35,9 @@ return {
         c = { 'clang-format' },
         cpp = { 'clang-format' },
         javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
         typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
         markdown = { 'prettier' },
       },
       formatters = {
@@ -43,7 +45,7 @@ return {
           prepend_args = { '--style=file', '--fallback-style=Google' },
         },
         prettier = {
-          prepend_args = { '--tab-width=4', '--print-width=100' },
+          prepend_args = { '--tab-width=2', '--print-width=100' },
         },
       },
     },
