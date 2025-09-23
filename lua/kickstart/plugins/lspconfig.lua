@@ -26,8 +26,23 @@ return {
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- Allows extra capabilities provided by blink.cmp
-      'saghen/blink.cmp',
+      -- Blink completion + snippets
+      {
+        'saghen/blink.cmp',
+        dependencies = {
+          {
+            'L3MON4D3/LuaSnip',
+            version = '2.*',
+            lazy = false, -- 👈 force load early so blink never falls back to vim.snippet
+            build = (function()
+              if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+                return
+              end
+              return 'make install_jsregexp'
+            end)(),
+          },
+        },
+      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
