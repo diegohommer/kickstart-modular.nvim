@@ -61,6 +61,13 @@ return {
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          file_ignore_patterns = {
+            'int6%-gpon/docs/.*',
+            'node_modules',
+            '%.git/',
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
