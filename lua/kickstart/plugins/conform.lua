@@ -19,7 +19,7 @@ return {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true, ruby = true }
+        local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
@@ -30,17 +30,19 @@ return {
         end
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'black' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
         cs = { 'csharpier' },
         javascript = { 'prettier' },
         javascriptreact = { 'prettier' },
+        json = { 'prettier' },
+        lua = { 'stylua' },
+        markdown = { 'prettier' },
+        python = { 'black' },
+        ruby = { 'rubocop' },
+
         typescript = { 'prettier' },
         typescriptreact = { 'prettier' },
-        markdown = { 'prettier' },
-        json = { 'prettier' },
       },
       formatters = {
         black = {
@@ -51,6 +53,10 @@ return {
         },
         prettier = {
           prepend_args = { '--tab-width=2', '--print-width=100' },
+        },
+        rubocop = {
+          command = 'rubocop',
+          args = { '--server', '--auto-correct', '--stdin-display-name', '$FILENAME', '-' },
         },
       },
     },

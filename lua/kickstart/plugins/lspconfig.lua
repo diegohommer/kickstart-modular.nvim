@@ -228,7 +228,11 @@ return {
       local servers = {
         clangd = {},
         pyright = {},
+        rubocop = {
+          cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
+        },
         ts_ls = {},
+
         -- gopls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -270,7 +274,8 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'rubocop',
+        'stylua',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
